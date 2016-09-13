@@ -7,10 +7,11 @@
           <div class="container">
             {% if businesses %}
               <a href="{{url_for('index')}}"> Look up another location</a>
+              <h1> List of Businesses</h1>
               {% for business in businesses.businesses %}
-              <h1> the business name is {{business.name}}</h1>
+              <p> the business name is {{business.name}}</p>
               <p>" the business rating  is {{business.rating}}</p>
-              <p>" the business rating  is {{business.ratings}}</p>
+              <p>" the business number  is {{business.number </p>
               {% endfor %}
             {%else %}
             <h1>"Where are you looking for items? "</h1>
