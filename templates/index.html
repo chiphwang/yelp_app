@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+ </head>
+  <body>
+      <div class="jumbotron">
+          <div class="container">
+            {% if businesses %}
+              <a href="{{url_for('index')}}"> Look up another location</a>
+              {% for business in businesses.businesses %}
+              <h1> the business name is {{business.name}}</h1>
+              <p>" the business rating  is {{business.rating}}</p>
+              <p>" the business rating  is {{business.ratings}}</p>
+              {% endfor %}
+            {%else %}
+            <h1>"Where are you looking for items? "</h1>
+            <form action='/' class="form-inline">
+                <div class="form-group">
+                  <input type="text" name="location" placeholder="Enter Your Location" class="form-control">
+                  <input type="text" name="terms" placeholder="Enter Your items" class="form-control">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+            {% endif %}
+            <a href="{{url_for('about') }}">About this project</a>
+          </div>
+        </div>
+    </body>
+</html>
