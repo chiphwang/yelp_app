@@ -7,18 +7,18 @@
           <div class="container">
             {% if businesses %}
               <a href="{{url_for('index')}}"> Look up another location</a>
-              <h1> Here is a list of Businesses </h1>
+              <h2> Here is a list of Businesses </h2>
               {% for business in businesses.businesses %}
               <p> The business name is {{business.name}}</p>
               <p> The business rating  is {{business.rating}}</p>
-              <p> The business number  is {{business.number}} </p>
+              <p> The business number  is {{business.phone}} </p>
               {% endfor %}
             {%else %}
-            <h1>"Where are you looking for items? "</h1>
+            <h1>"Enter Location and Item? "</h1>
             <form action='/' class="form-inline">
                 <div class="form-group">
                   <input type="text" name="location" placeholder="Enter Your Location" class="form-control">
-                  <input type="text" name="terms" placeholder="Enter Your items" class="form-control">
+                  <input type="text" name="terms" placeholder="Enter Your term" class="form-control">
                 </div>
                 <input type="submit" value="Submit" class="btn btn-primary">
             </form>
